@@ -17,7 +17,15 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "ngx-user-signature": [
+        "dist/ngx-user-signature"
+      ],
+      "ngx-user-signature/*": [
+        "dist/ngx-user-signature/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
