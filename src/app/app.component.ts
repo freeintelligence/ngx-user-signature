@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material';
+
+import { CompleteSignatureComponent } from 'ngx-user-signature';
 
 @Component({
   selector: 'user-signature-root',
@@ -7,8 +10,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  open() {
+  constructor(private dialog: MatDialog) {
 
+  }
+
+  open() {
+    this.dialog.open(CompleteSignatureComponent, {
+      width: '448px',
+      data: {
+
+      }
+    });
   }
 
 }
