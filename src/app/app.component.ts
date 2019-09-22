@@ -16,7 +16,7 @@ export class AppComponent {
 
   open() {
     this.dialog.open(CompleteSignatureComponent, {
-      width: '448px',
+      width: '512px',
       data: {
 
       }
