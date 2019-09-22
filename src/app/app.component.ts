@@ -11,7 +11,7 @@ import { CompleteSignatureComponent } from 'ngx-user-signature';
 export class AppComponent {
 
   constructor(private dialog: MatDialog) {
-
+    this.open();
   }
 
   open() {
@@ -20,6 +20,9 @@ export class AppComponent {
       data: {
 
       }
+    })
+    .afterClosed().subscribe(data => {
+      console.log('Closed data', data);
     });
   }
 

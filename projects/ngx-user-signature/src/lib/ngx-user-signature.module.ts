@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
-import { MatDialogModule } from '@angular/material';
+import { MatDialogModule, MatButtonModule, MatIconModule, } from '@angular/material';
 import { CompleteSignatureComponent } from './dialogs/complete-signature/complete-signature.component';
 
 @NgModule({
   declarations: [CompleteSignatureComponent],
   entryComponents: [CompleteSignatureComponent],
   imports: [
-    MatDialogModule
+    MatDialogModule,
+    MatButtonModule,
+    MatIconModule,
   ],
   exports: []
 })

@@ -13,4 +13,12 @@ export class CompleteSignatureComponent implements OnInit {
   ngOnInit() {
   }
 
+  upload() {
+
+  }
+
+  save() {
+    
+  }
+
 }
