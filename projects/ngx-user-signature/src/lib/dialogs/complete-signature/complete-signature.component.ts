@@ -53,7 +53,10 @@ export class CompleteSignatureComponent implements OnInit, AfterViewInit {
     if (file) {
       const reader = new FileReader();
 
-      reader.onload = () => this.signaturePad.fromDataURL(reader.result.toString());
+      reader.onload = () => {
+        this.signaturePad.clear();
+        this.signaturePad.fromDataURL(reader.result.toString());
+      };
       reader.readAsDataURL(file);
     }
   }
@@ -64,12 +67,6 @@ export class CompleteSignatureComponent implements OnInit, AfterViewInit {
 
   close() {
     this.dialogRef.close();
-  }
-
-  drawComplete() {
-  }
-
-  drawStart() {
   }
 
 }
