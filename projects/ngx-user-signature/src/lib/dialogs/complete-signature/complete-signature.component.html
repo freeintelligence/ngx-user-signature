@@ -1,5 +1,5 @@
 <div class="container" #generalContainer>
-  <h1 mat-dialog-title #titleContainer>Subir o dibujar firma <button class="clean-button" mat-button (click)="signaturePad.clear()"><mat-icon>clear</mat-icon> Limpiar firma</button></h1>
+  <h1 mat-dialog-title #titleContainer>Subir o dibujar firma <button class="clear-button" mat-button (click)="signaturePad.clear()"><mat-icon>clear</mat-icon> Limpiar firma</button></h1>
 
   <div #signatureContainer (window:resize)="size()" class="signature">
     <signature-pad [options]="signaturePadOptions"></signature-pad>
