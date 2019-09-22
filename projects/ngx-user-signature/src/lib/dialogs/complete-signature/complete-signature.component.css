@@ -10,3 +10,7 @@
   box-sizing: content-box;
   border: solid 1px #ccc;
 }
+.clean-button {
+  position: absolute;
+  right: 0;
+}
