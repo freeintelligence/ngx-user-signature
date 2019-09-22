@@ -3,5 +3,9 @@
   "dest": "../../dist/ngx-user-signature",
   "lib": {
     "entryFile": "src/public-api.ts"
-  }
+  },
+  "whitelistedNonPeerDependencies": [
+    "tslib",
+    "angular2-signaturepad"
+  ]
 }
