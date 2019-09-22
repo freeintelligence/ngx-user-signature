@@ -1,12 +1,9 @@
 import { NgModule } from '@angular/core';
-import { NgxUserSignatureComponent } from './ngx-user-signature.component';
-
-
 
 @NgModule({
-  declarations: [NgxUserSignatureComponent],
+  declarations: [],
   imports: [
   ],
-  exports: [NgxUserSignatureComponent]
+  exports: []
 })
 export class NgxUserSignatureModule { }
