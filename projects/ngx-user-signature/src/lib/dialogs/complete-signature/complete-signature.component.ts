@@ -2,6 +2,10 @@ import { Component, OnInit, Inject, ViewChild, AfterViewInit, ElementRef } from 
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 import { SignaturePad } from 'angular2-signaturepad/signature-pad';
 
+export interface DataInterface {
+  image: string;
+}
+
 @Component({
   selector: 'lib-complete-signature',
   templateUrl: './complete-signature.component.html',
@@ -21,14 +25,19 @@ export class CompleteSignatureComponent implements OnInit, AfterViewInit {
 
   constructor(
     private dialogRef: MatDialogRef<CompleteSignatureComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any) { }
+    @Inject(MAT_DIALOG_DATA) public data: DataInterface) { }
 
   ngOnInit() {
   }
 
   ngAfterViewInit() {
     this.signaturePad.clear();
+
     this.size();
+
+    if (typeof this.data.image === 'string') {
+      this.signaturePad.fromDataURL(this.data.image);
+    }
   }
 
   size() {
@@ -43,7 +52,7 @@ export class CompleteSignatureComponent implements OnInit, AfterViewInit {
   }
 
   save() {
-
+    this.dialogRef.close(this.signaturePad.toDataURL('image/png'));
   }
 
   close() {
