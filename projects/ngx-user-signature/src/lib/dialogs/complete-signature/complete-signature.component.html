@@ -7,7 +7,8 @@
 
   <div mat-dialog-actions #actionsContainer align="end">
     <button mat-button (click)="close()" cdkFocusInitial><mat-icon>close</mat-icon> Cerrar</button>
-    <button mat-button color="accent" (click)="upload()"><mat-icon>cloud_upload</mat-icon> Seleccionar archivo</button>
+    <input type="file" #uploadedFile (change)="imageToSignature($event)" accept=".png, .jpg, .jpeg" hidden>
+    <button mat-button color="accent" (click)="uploadedFile.click()"><mat-icon>cloud_upload</mat-icon> Seleccionar archivo</button>
     <button mat-button color="primary" (click)="save()"><mat-icon>save</mat-icon> Guardar</button>
   </div>
 </div>

@@ -47,8 +47,15 @@ export class CompleteSignatureComponent implements OnInit, AfterViewInit {
     this.signaturePad.set('canvasHeight', this.generalContainer.nativeElement.offsetHeight - rest - 4);
   }
 
-  upload() {
+  imageToSignature(event: any) {
+    const file = event.target.files[0];
 
+    if (file) {
+      const reader = new FileReader();
+
+      reader.onload = () => this.signaturePad.fromDataURL(reader.result.toString());
+      reader.readAsDataURL(file);
+    }
   }
 
   save() {
