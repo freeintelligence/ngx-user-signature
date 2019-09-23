@@ -5,6 +5,7 @@ import { SignaturePad } from 'angular2-signaturepad/signature-pad';
 export interface ButtonInterface {
   text: string;
   icon?: string;
+  color?: string;
   handle: (dialog: CompleteSignatureComponent, image: string) => void;
 }
 export interface DataInterface {
