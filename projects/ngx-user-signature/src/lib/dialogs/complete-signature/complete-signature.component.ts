@@ -32,7 +32,7 @@ export class CompleteSignatureComponent implements OnInit, AfterViewInit {
   };
 
   constructor(
-    private dialogRef: MatDialogRef<CompleteSignatureComponent>,
+    public dialogRef: MatDialogRef<CompleteSignatureComponent>,
     @Inject(MAT_DIALOG_DATA) public data: DataInterface) { }
 
   ngOnInit() {
