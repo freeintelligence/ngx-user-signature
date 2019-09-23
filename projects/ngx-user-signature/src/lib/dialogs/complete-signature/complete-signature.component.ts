@@ -2,8 +2,14 @@ import { Component, OnInit, Inject, ViewChild, AfterViewInit, ElementRef } from 
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 import { SignaturePad } from 'angular2-signaturepad/signature-pad';
 
+export interface ButtonInterface {
+  text: string;
+  icon?: string;
+  handle: (dialog: CompleteSignatureComponent, image: string) => void;
+}
 export interface DataInterface {
   image: string;
+  buttons: ButtonInterface[];
 }
 
 @Component({
@@ -61,8 +67,8 @@ export class CompleteSignatureComponent implements OnInit, AfterViewInit {
     }
   }
 
-  save() {
-    this.dialogRef.close(this.signaturePad.toDataURL('image/png'));
+  handle(button: ButtonInterface) {
+    return button.handle(this, this.signaturePad.toDataURL('image/png'));
   }
 
   close() {

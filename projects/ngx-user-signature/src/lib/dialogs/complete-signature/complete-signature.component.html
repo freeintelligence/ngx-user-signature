@@ -9,6 +9,6 @@
     <button mat-button (click)="close()" cdkFocusInitial><mat-icon>close</mat-icon> Cerrar</button>
     <input type="file" #uploadedFile (change)="imageToSignature($event)" accept=".png, .jpg, .jpeg" hidden>
     <button mat-button color="accent" (click)="uploadedFile.click()"><mat-icon>cloud_upload</mat-icon> Seleccionar archivo</button>
-    <button mat-button color="primary" (click)="save()"><mat-icon>save</mat-icon> Guardar</button>
+    <button *ngFor="let button of data?.buttons" mat-button [color]="button?.color" (click)="handle(button)"><mat-icon *ngIf="button?.icon">{{ button?.icon }}</mat-icon> {{ button?.text }}</button>
   </div>
 </div>
