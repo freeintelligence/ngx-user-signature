@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { MatDialogModule, MatButtonModule, MatIconModule, } from '@angular/material';
 import { SignaturePadModule } from 'angular2-signaturepad';
@@ -7,6 +8,7 @@ import { CompleteSignatureComponent } from './dialogs/complete-signature/complet
   declarations: [CompleteSignatureComponent],
   entryComponents: [CompleteSignatureComponent],
   imports: [
+    CommonModule,
     MatDialogModule,
     MatButtonModule,
     MatIconModule,
