@@ -8,8 +8,10 @@ export interface ButtonInterface {
   handle: (dialog: CompleteSignatureComponent, image: string) => void;
 }
 export interface DataInterface {
+  title?: string;
   image: string;
   buttons: ButtonInterface[];
+  disableClose?: boolean;
 }
 
 @Component({

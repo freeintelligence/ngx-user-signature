@@ -1,12 +1,17 @@
 <div class="container" #generalContainer>
-  <h1 mat-dialog-title #titleContainer>Subir o dibujar firma <button class="clear-button" mat-button (click)="signaturePad.clear()"><mat-icon>clear</mat-icon> Limpiar firma</button></h1>
+  <h1 mat-dialog-title #titleContainer>
+    <span *ngIf="data?.title">{{ data?.title }}</span>
+    <span *ngIf="!data?.title">Subir o dibujar firma</span>
+    
+    <button class="clear-button" mat-button (click)="signaturePad.clear()"><mat-icon>clear</mat-icon> Limpiar firma</button>
+  </h1>
 
   <div #signatureContainer (window:resize)="size()" class="signature">
     <signature-pad [options]="signaturePadOptions"></signature-pad>
   </div>
 
   <div mat-dialog-actions #actionsContainer align="end">
-    <button mat-button (click)="close()" cdkFocusInitial><mat-icon>close</mat-icon> Cerrar</button>
+    <button mat-button (click)="close()" cdkFocusInitial *ngIf="!data?.disableClose"><mat-icon>close</mat-icon> Cerrar</button>
     <input type="file" #uploadedFile (change)="imageToSignature($event)" accept=".png, .jpg, .jpeg" hidden>
     <button mat-button color="accent" (click)="uploadedFile.click()"><mat-icon>cloud_upload</mat-icon> Seleccionar archivo</button>
     <button *ngFor="let button of data?.buttons" mat-button [color]="button?.color" (click)="handle(button)"><mat-icon *ngIf="button?.icon">{{ button?.icon }}</mat-icon> {{ button?.text }}</button>
